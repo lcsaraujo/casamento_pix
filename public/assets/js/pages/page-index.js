@@ -14,7 +14,6 @@ form.donation.on('submit', async function (e) {
 
     const data = {
         nickname:   $(this).find('#nickname').val(),
-        email:      $(this).find('#email').val(),
         message:    $(this).find('#message').val(),
         valueToPay: $(this).find('#value').val()
     }

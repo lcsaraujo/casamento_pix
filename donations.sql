@@ -44,7 +44,7 @@ CREATE TABLE `donations` (
 --
 
 INSERT INTO `donations` (`id`, `external_reference`, `nickname`, `email`, `message`, `status`, `value`, `created_at`, `updated_at`) VALUES
-(8, '$2y$10$vL8aaorLVNtWv.oxD0mIIOTBAip33QFJW25ls1mkK07IA.h.ES1p.', 'Henrique', 'teste@email.com', 'mensagem qualquer', 'approved', 0.5, '2023-10-19 18:15:53', '2023-10-19 18:15:53');
+(8, '$2y$10$vL8aaorLVNtWv.oxD0mIIOTBAip33QFJW25ls1mkK07IA.h.ES1p.', 'Lucas', 'teste@email.com', 'mensagem qualquer', 'approved', 0.5, '2023-10-19 18:15:53', '2023-10-19 18:15:53');
 
 --
 -- Índices para tabelas despejadas

@@ -14,7 +14,7 @@ form.donation.on('submit', async function (e) {
 
     const data = {
         nickname:   $(this).find('#nickname').val(),
-        email:      $(this).find('#email').val(),
+        // email:      $(this).find('#email').val(),
         message:    $(this).find('#message').val(),
         valueToPay: $(this).find('#value').val()
     }
@@ -34,7 +34,7 @@ form.donation.on('submit', async function (e) {
         return;
     }
 
-    showInformationToPay(response.data);
+    await showInformationToPay(response.data);
 
 });
 
@@ -75,7 +75,7 @@ const showInformationToPay = (information) => {
 }
 
 const showApprovedPaymentStatus = ( externalReference ) => {
-    const eventSource = new EventSource(`payment/sse-status-payment.php?external_reference=${externalReference}`);
+    const eventSource = new EventSource(`public/payment/sse-status-payment.php?external_reference=${externalReference}`);
 
     eventSource.addEventListener('statusPayment', e => {
 

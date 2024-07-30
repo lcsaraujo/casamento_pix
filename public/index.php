@@ -15,7 +15,7 @@
     }
 
     // Donations
-    $query = "SELECT value, nickname, message, updated_at FROM donations WHERE status = 'approved' ORDER BY updated_at DESC";
+    $query = "SELECT value, nickname, message, updated_at FROM donations ORDER BY updated_at DESC";
     $stmt  = $pdo->prepare($query);
     $stmt->execute();
 
@@ -34,6 +34,8 @@
     <!-- CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
 </head>
 <body>
 
@@ -86,7 +88,7 @@
                 <div class="mb-4 card p-4 rounded-4 user-donation-card">
                     <div>
                         <small class="dateDonation"><?= $dateDonation; ?></small>
-                        <img class="user-avatar" src="assets/images/user-placeholder.png" />
+                        <img class="user-avatar" src="assets/images/duck.gif" />
                         
                         <span>
                             <a href="#" class="fw-bold text-decoration-none text-black">
@@ -136,12 +138,12 @@
                         <label for="message">Mensagem (opcional)</label>
                     </div>
 
-                    <!-- <div class="form-floating mb-3">
-                        <input type="email" class="form-control rounded-3" id="email" placeholder="name@example.com" required>
+                    <div class="form-floating mb-3" hidden>
+                        <input type="email" class="form-control rounded-3" id="email" placeholder="name@example.com">
                         <label for="email">Email</label>
                        
                         <small class="mt-2">seu email não será compartilhado.</small>
-                    </div> -->
+                    </div>
 
                     <hr/>
 
@@ -168,6 +170,7 @@
                 <div id="loading" class="text-center mb-4 mt-4">
                     <div class="spinner-border text-warning" style="width: 5rem; height: 5rem;" role="status"></div>
                 </div>
+       
 
                 <div class="row d-none" id="payment-content">
                     <div class="col-md-12">
